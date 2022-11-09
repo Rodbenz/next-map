@@ -30,8 +30,7 @@ function MapWrapper(props) {
   mapRef.current = map
 
   // initialize map on first render - logic formerly put into componentDidMount
-  useEffect(() => {
-
+  const initializeMapOn = async () => {
     // create and add vector source layer
     const initalFeaturesLayer = new VectorLayer({
       source: new VectorSource()
@@ -74,9 +73,20 @@ function MapWrapper(props) {
     // initialMap.on('click', handleMapClick)
 
     // // save map and vector layer references to state
-    setMap(initialMap)
+    if (map == undefined) {
+      await setMap(initialMap)
+      // try {
+      //     initialMap.addLayer(vector);
+      // } catch {
+      //     null
+      // }
+    }
+    // setMap(initialMap)
     // setFeaturesLayer(initalFeaturesLayer)
-    console.log(mapElement,'mapElementmapElement');
+    console.log(mapElement, 'mapElementmapElement');
+  }
+  useEffect(() => {
+    initializeMapOn()
   }, [])
 
   // update map if features prop changes - logic formerly put into componentDidUpdate
@@ -118,7 +128,7 @@ function MapWrapper(props) {
   // render component
   return (
     // <Paper>
-    <div ref={mapElement} style={{ height: `${props.height}vh`, width: "100%", position: "relative" }}></div>
+    <div ref={mapElement} style={{ height: `${props.height}vh`, width: "100%", position: "relative", position: "relative", display:"" }} ></div>
     // </Paper>
   )
 
