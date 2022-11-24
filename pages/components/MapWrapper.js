@@ -29,8 +29,10 @@ function MapWrapper(props) {
   const mapRef = useRef()
   mapRef.current = map
 
+
+  useEffect(() => {
   // initialize map on first render - logic formerly put into componentDidMount
-  const initializeMapOn = async () => {
+  // const initializeMapOn = async () => {
     // create and add vector source layer
     const initalFeaturesLayer = new VectorLayer({
       source: new VectorSource()
@@ -73,21 +75,29 @@ function MapWrapper(props) {
     // initialMap.on('click', handleMapClick)
 
     // // save map and vector layer references to state
-    if (map == undefined) {
-      await setMap(initialMap)
-      // try {
-      //     initialMap.addLayer(vector);
-      // } catch {
-      //     null
-      // }
-    }
-    // setMap(initialMap)
-    // setFeaturesLayer(initalFeaturesLayer)
-    console.log(mapElement, 'mapElementmapElement');
+  //   if (map == undefined) {
+  //     await setMap(initialMap)
+  //     // try {
+  //     //     initialMap.addLayer(vector);
+  //     // } catch {
+  //     //     null
+  //     // }
+  //   }
+  //   // setMap(initialMap)
+  //   // setFeaturesLayer(initalFeaturesLayer)
+  //   console.log(mapElement, 'mapElementmapElement');
+  // }
+  // useEffect(() => {
+  //   initializeMapOn()
+  // }, [])
+  if(mapRef.current === true) {
+    console.log('stop');
   }
-  useEffect(() => {
-    initializeMapOn()
-  }, [])
+  return () => {
+    console.log(mapElement,'mapElementmapElement');
+    mapRef.current = true
+  }
+}, [])
 
   // update map if features prop changes - logic formerly put into componentDidUpdate
   useEffect(() => {
@@ -128,7 +138,7 @@ function MapWrapper(props) {
   // render component
   return (
     // <Paper>
-    <div ref={mapElement} style={{ height: `${props.height}vh`, width: "100%", position: "relative", position: "relative", display:"" }} ></div>
+    <div ref={mapElement} style={{ height: `${props.height}vh`, width: "100%", position: "relative", position: "relative", overflow: "hidden" }} ></div>
     // </Paper>
   )
 
