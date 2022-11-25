@@ -8,7 +8,7 @@ import GeoJSON from 'ol/format/GeoJSON'
 import Feature from 'ol/Feature';
 
 // components
-import MapWrapper from '../components/MapWrapper'
+import MapWrapper from '../components/myMap/MapWrapper'
 
 function Mymap() {
     const stylelable = {
@@ -25,7 +25,7 @@ function Mymap() {
     }
 
     return (
-        <div style={{ textAlign: 'center', height: '100%', width: '100%', display: "flex" }}>
+        <div style={{ textAlign: 'center', height: '100%', width: '100%'}}>
 
             <div style={stylelable}>
                 <p>React Functional Components with OpenLayers Example</p>

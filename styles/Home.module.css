@@ -1,3 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+.container {
+  min-height: calc(100vh - 45px);
+  flex: 1;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+}
+
+.kanit{
+  font-family: 'Kanit';
+}
+
+.kanit1{
+  font-family: 'Kanit';
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) ;
+}
+
+.brdrleft{
+  border-left:  5px solid rgba(215, 162, 3, 1) ;
+  width: 100%;
+}
+
+.brdrleft1{
+  border-left:  10px solid rgba(212, 89, 163, 1) ;
+  width: 350px;
+  z-index: 300;
+}
+.brdrleft1:hover {
+  background-color:   rgba(212, 89, 163, 1) ;
+  color: white;
+  transform: scale(1.02);
+}
+.brdrleft2{
+  border-left:  10px solid rgba(215, 162, 3, 1) ;
+  width: 350px;
+  z-index: 300;
+}
+.brdrleft2:hover {
+  background-color:   rgba(215, 162, 3, 1) ;
+  color: white;
+  transform: scale(1.02);
+}
+.brdrleft3{
+  border-left:  10px solid rgba(64, 107, 188, 1) ;
+  width: 350px;
+  z-index: 300;
+}
+.brdrleft3:hover {
+  background-color:   rgba(64, 107, 188, 1) ;
+  color: white;
+  transform: scale(1.02);
+}
+.brdrleft4{
+  border-left:  10px solid rgba(56, 181, 76, 1);
+  width: 350px;
+  z-index: 300;
+}
+.brdrleft4:hover {
+  background-color:   rgba(56, 181, 76, 1) ;
+  color: white;
+  transform: scale(1.02);
+}
+
+
 .container {
   padding: 0 2rem;
 }
